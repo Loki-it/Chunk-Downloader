@@ -3,7 +3,7 @@ import aiohttp
 import os
 from urllib.parse import urlparse
 
-CHUNK_SIZE = 1024 * 1024  # Dimensione dei pezzi (1 MB)
+CHUNK_SIZE = 2048 * 2048  # Dimensione dei chunk (4 MB), se non bypassa prova a mettere 1024 * 1024  
 NUM_CHUNKS = 100  # Numero di chunk da scaricare simultaneamente
 async def download_chunk(session, url, start_byte, end_byte, chunk_index):
     headers = {'Range': f'bytes={start_byte}-{end_byte}'}
