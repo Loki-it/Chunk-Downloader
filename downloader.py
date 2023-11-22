@@ -46,7 +46,6 @@ async def main():
 
         print("Tutti i chunk sono stati scaricati.")
 
-        # Unione dei chunk nel file finale
         downloaded_filename = f'file_scaricato{file_extension}'
         with open(downloaded_filename, 'wb') as output_file:
             for chunk_index in range(num_chunks):
@@ -54,8 +53,6 @@ async def main():
                 with open(chunk_filename, 'rb') as chunk_file:
                     output_file.write(chunk_file.read())
                 os.remove(chunk_filename)
-        
-        # Rimuovi la directory dei chunk
         os.rmdir('chunk_directory')
 
 if __name__ == '__main__':
