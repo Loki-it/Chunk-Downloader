@@ -21,6 +21,7 @@ A high-performance Python download accelerator that bypasses server-side speed l
 # Clone repository
 git clone https://github.com/Loki-it/Chunk-Downloader.git
 cd Chunk-Downloader
+python downloader.py
 
 # Install dependencies
 pip install aiohttp
